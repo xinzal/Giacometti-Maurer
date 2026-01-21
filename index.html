@@ -104,6 +104,11 @@
         /* --- ANIMAÇÕES --- */
         .reveal { opacity: 0; transform: translateY(40px); transition: 1s all ease; }
         .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
         /* --- HEADER & BOTÃO CONTATO --- */
         header {
@@ -232,7 +237,13 @@
             transform: translateX(100%); transition: transform 1s ease-in-out; z-index: 1;
         }
         .slide.active { transform: translateX(0); z-index: 2; }
-        .slide::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.45); }
+        
+        /* OVERLAY: Gradiente para melhorar leitura */
+        .slide::before { 
+            content: ''; 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7) 100%);
+        }
 
         .hero-content {
             position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
@@ -262,7 +273,8 @@
 
         /* --- QUEM SOMOS --- */
         .team-section { background-color: transparent; }
-        .partners-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 60px; max-width: 1200px; margin: 0 auto; }
+        /* Adicionado align-items flex-start para manter o alinhamento no topo */
+        .partners-container { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 60px; max-width: 1200px; margin: 0 auto; }
         .partner-block { flex: 1; min-width: 300px; max-width: 450px; text-align: center; }
         
         .partner-img-wrapper {
@@ -304,7 +316,42 @@
             padding-top: 5px;
             margin-top: 5px;
         }
-        .partner-info p.bio { color: var(--text-light); font-size: 0.95rem; line-height: 1.7; }
+        .partner-info p.bio { color: var(--text-light); font-size: 0.95rem; line-height: 1.7; text-align: justify; }
+        
+        /* ESTILO PARA O BOTÃO "LER MAIS" */
+        .bio-more {
+            display: none;
+        }
+        .bio-more.show {
+            display: block;
+            animation: fadeIn 0.6s ease;
+        }
+        .partner-info p.bio + p.bio {
+            margin-top: 15px; /* Espaço entre parágrafos */
+        }
+
+        .btn-read-more {
+            background: none;
+            border: none;
+            color: var(--accent);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 15px;
+            padding: 5px 0;
+            transition: 0.3s;
+            border-bottom: 1px solid transparent;
+        }
+        
+        .btn-read-more:hover {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+        .btn-read-more:focus { outline: none; }
+
 
         /* --- DESTAQUE NA MÍDIA --- */
         .media-highlight { background-color: rgba(244, 251, 246, 0.9); }
@@ -476,6 +523,17 @@
 
         /* --- ADAPTAÇÕES MOBILE (MEDIA QUERIES) --- */
         @media (max-width: 900px) {
+            /* AJUSTE DO BANNER PARA MOBILE */
+            .hero-slider {
+                /* Altura inteligente para evitar pulos no mobile */
+                height: 100svh; 
+            }
+            
+            .slide {
+                /* Foca no topo da imagem para não cortar a cabeça */
+                background-position: center top !important;
+            }
+
             .hero-content h1 { font-size: 2.2rem; }
             .hero-content p { font-size: 0.9rem; letter-spacing: 1px; }
             .hero-content { width: 90%; }
@@ -544,7 +602,7 @@
     </div>
 
     <div id="mobile-menu" class="mobile-nav-overlay">
-        <a href="javascript:void(0)" class="closebtn" onclick="toggleMobileMenu()">&times;</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleMobileMenu()">×</a>
         <div class="mobile-nav-content">
             <a href="#home" onclick="toggleMobileMenu()">Início</a>
             <a href="#quem-somos" onclick="toggleMobileMenu()">Quem Somos</a>
@@ -602,13 +660,24 @@
         <div class="partners-container">
             <div class="partner-block reveal">
                 <div class="partner-img-wrapper">
-                    <img src="Dra._Maurer.png" class="partner-img" alt="Dra. Eduarda Maurer">
+                    <img src="Dra._Maurer.png" class="partner-img" alt="Dra. Eduarda Maurer Buchner">
                 </div>
                 <div class="partner-info">
-                    <h3>Dra. Eduarda Maurer</h3>
+                    <h3>Dra. Eduarda Maurer Buchner</h3>
                     <span class="role">Sócia Fundadora</span>
                     <span class="oab-number">OAB/PR 112.531</span>
-                    <p class="bio">Especialista em Direito Imobiliário e Sucessório, com foco na proteção patrimonial e regularização de bens.</p>
+                    
+                    <div class="bio-content" id="bio-eduarda">
+                        <p class="bio">Advogada especialista em Direito de Família e Sucessões, com atuação estratégica em divórcios complexos, guarda, pensão, partilha de bens e reorganização patrimonial familiar. Conduz cada caso com foco na proteção jurídica, financeira e emocional de seus clientes, aliando técnica apurada a uma abordagem humana, ética e responsável.</p>
+                        
+                        <div class="bio-more">
+                            <p class="bio">Possui sólida experiência na condução de demandas sensíveis e patrimonialmente relevantes, assessorando clientes que buscam segurança jurídica, discrição, agilidade e decisões bem fundamentadas, especialmente em momentos de ruptura familiar.</p>
+                            
+                            <p class="bio">É sócia-fundadora de escritório com atuação concentrada em Direito de Família, Direito Civil e Direito Imobiliário, estruturado para oferecer atendimento personalizado, estratégia processual clara e comunicação acessível, contando ainda com o suporte de uma equipe de estagiários cuidadosamente selecionada e integrada à dinâmica do escritório.</p>
+                        </div>
+
+                        <button class="btn-read-more" onclick="toggleBio('bio-eduarda', this)">Ler mais</button>
+                    </div>
                 </div>
             </div>
             
@@ -618,9 +687,26 @@
                 </div>
                 <div class="partner-info">
                     <h3>Dra. Andressa Giacometti</h3>
-                    <span class="role">Sócia Fundadora</span>
-                    <span class="oab-number">OAB/PR 64731</span>
-                    <p class="bio">Especialista em Direito de Família, atuando na resolução de conflitos e planejamento matrimonial.</p>
+                    <span class="role">Sócia Fundadora | Mediadora</span>
+                    <span class="oab-number">OAB/PR 64.731</span>
+                    
+                    <div class="bio-content" id="bio-andressa">
+                        <p class="bio">Advogada com mais de 15 anos de atuação, especialista em Direito de Família e Sucessões, com prática consolidada e atuação estratégica em divórcios complexos, guarda, pensão alimentícia, partilha de bens e reorganização patrimonial familiar.</p>
+
+                        <div class="bio-more">
+                             <p class="bio">Conduz sua atuação com base na técnica jurídica, e sabe na pele a experiência prática de ter enfrentado um divórcio conflituoso no início da sua carreira envolvendo a sua filha, a pequena Maria Clara.</p>
+
+                             <p class="bio">É pós-graduada em Direito de Família e em Direito Imobiliário, além de possuir formação em Mediação de Conflitos Familiares, o que lhe confere uma atuação eficaz na resolução dos conflitos.</p>
+
+                             <p class="bio">Atuou por 10 anos como advogada da imobiliária da família, Giacometti Imóveis, empresa com 38 anos de mercado em Curitiba, onde desenvolveu sólida experiência na gestão, organização e proteção do patrimônio imobiliário.</p>
+
+                             <p class="bio">Possui sólida experiência na condução de demandas sensíveis e patrimonialmente relevantes, assessorando clientes que buscam segurança jurídica, discrição e agilidade, sempre aliando técnica apurada a uma abordagem humana.</p>
+                             
+                             <p class="bio">É sócia-fundadora do escritório, estruturado para oferecer atendimento personalizado com uma equipe integrada à dinâmica do escritório.</p>
+                        </div>
+
+                        <button class="btn-read-more" onclick="toggleBio('bio-andressa', this)">Ler mais</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -697,7 +783,7 @@
                     <i class="fas fa-map-marker-alt"></i>
                     <div>
                         <strong>Endereço</strong>
-                        <p>R. Visc. do Rio Branco, 472 - Mercês<br>Curitiba, Paraná</p>
+                        <p>Rua Ébano Pereira, 11 - Centro, Curitiba - PR, 80410-240<br>Curitiba, Paraná</p>
                     </div>
                 </div>
 
@@ -714,7 +800,7 @@
                     <i class="fas fa-envelope"></i>
                     <div>
                         <strong>E-mail</strong>
-                        <p>contato@giacomettimaurer.adv.br</p>
+                        <p>giacomettijuridico@gmail.com</p>
                     </div>
                 </div>
 
@@ -732,7 +818,7 @@
             </div>
 
             <div class="map-container">
-               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.245840616942!2d-49.27989352355609!3d-25.429983132924197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce40e6c6e7371%3A0x6e3b5e1b2f9f1b2!2sR.%20Visc.%20do%20Rio%20Branco%2C%20472%20-%20Merc%C3%AAs%2C%20Curitiba%20-%20PR%2C%2080410-000!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.1955788801297!2d-49.27643282461054!3d-25.431724077560737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce40ddbb9cafb%3A0xdbb55e9a861a3898!2sR.%20%C3%89bano%20Pereira%2C%2011%20-%20Centro%2C%20Curitiba%20-%20PR%2C%2080410-240!5e0!3m2!1spt-BR!2sbr!4v1769013907044!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
@@ -749,6 +835,20 @@
     </footer>
 
     <script>
+        // --- FUNÇÃO PARA LER MAIS ---
+        function toggleBio(containerId, btn) {
+            var container = document.getElementById(containerId);
+            var moreText = container.querySelector('.bio-more');
+            
+            if (moreText.classList.contains('show')) {
+                moreText.classList.remove('show');
+                btn.innerHTML = "Ler mais";
+            } else {
+                moreText.classList.add('show');
+                btn.innerHTML = "Ler menos";
+            }
+        }
+
         // --- FUNÇÃO MENU MOBILE ---
         function toggleMobileMenu() {
             const menu = document.getElementById("mobile-menu");
