@@ -333,9 +333,6 @@
             font-size: 3.8rem; line-height: 1.1; margin-bottom: 25px;
             text-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-        /* Classe para ajustar H1 muito grandes */
-        .hero-content h1.seo-title { font-size: 3.2rem; }
-
         .hero-content p { font-size: 1.1rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 45px; }
 
         .btn-gold {
@@ -696,7 +693,7 @@
 
     <header id="header">
         <div class="logo">
-            <img src="logo_barra.png" alt="Giacometti Maurer Advocacia Curitiba">
+            <img src="logo_barra.png" alt="Giacometti Maurer">
         </div>
         
         <div class="mobile-menu-icon" onclick="toggleMobileMenu()">
@@ -714,21 +711,21 @@
     <div class="hero-slider" id="home">
         <div class="slide active" style="background-image: url('banner1.png');">
             <div class="hero-content">
-                <h1 class="seo-title">Advocacia em Curitiba</h1>
-                <p>Especialistas em Direito de Família e Sucessões | Tradição & Estratégia</p>
+                <h1>Tradição & Estratégia</h1>
+                <p>O Abraço da Justiça na defesa de famílias e patrimônios</p>
                 <a href="#contato" class="btn-gold">Agendar Consultoria</a>
             </div>
         </div>
         <div class="slide" style="background-image: url('banner2.png');">
             <div class="hero-content">
-                <h2>Advocacia Humanizada no Paraná</h2>
+                <h1>Advocacia Humanizada</h1>
                 <p>Compreendemos as histórias por trás de cada processo</p>
                 <a href="#quem-somos" class="btn-gold">Conheça as Sócias</a>
             </div>
         </div>
         <div class="slide" style="background-image: url('banner3.png');">
             <div class="hero-content">
-                <h2>Excelência Técnica</h2>
+                <h1>Excelência Técnica</h1>
                 <p>Combate, ética e transparência na busca da melhor solução</p>
                 <a href="#atuacao" class="btn-gold">Nossas Especialidades</a>
             </div>
@@ -737,13 +734,13 @@
 
     <section class="team-section" id="quem-somos">
         <div class="section-header reveal">
-            <span class="section-tag">Liderança e Experiência</span>
-            <h2 class="section-title">Nossas Advogadas</h2>
+            <span class="section-tag">Liderança</span>
+            <h2 class="section-title">As Sócias</h2>
         </div>
         <div class="partners-container">
             <div class="partner-block reveal">
                 <div class="partner-img-wrapper">
-                    <img src="Dra._Maurer.png" class="partner-img" alt="Dra. Eduarda Maurer - Advogada de Família em Curitiba">
+                    <img src="Dra._Maurer.png" class="partner-img" alt="Dra. Eduarda Maurer Buchner">
                 </div>
                 <div class="partner-info">
                     <h3>Dra. Eduarda Maurer Buchner</h3>
@@ -751,13 +748,12 @@
                     <span class="oab-number">OAB/PR 112.531</span>
                     
                     <div class="bio-content" id="bio-eduarda">
-                        <p class="bio">OAB/PR 112.531
-Advogada especialista em Direito de Família e Sucessões, com atuação estratégica em divórcios complexos, guarda, pensão, partilha de bens e reorganização patrimonial familiar. Conduz cada caso com foco na proteção jurídica, financeira e emocional de seus clientes, aliando técnica apurada a uma abordagem humana, ética e responsável.</p>
+                        <p class="bio">Advogada especialista em Direito de Família e Sucessões, com atuação estratégica em divórcios complexos, guarda, pensão, partilha de bens e reorganização patrimonial familiar. Conduz cada caso com foco na proteção jurídica, financeira e emocional de seus clientes, aliando técnica apurada a uma abordagem humana, ética e responsável.</p>
                         
                         <div class="bio-more">
-                            <p class="bio">Possui sólida experiência na condução de demandas sensíveis e patrimonialmente relevantes, assessorando clientes que buscam segurança jurídica, discrição, agilidade e decisões bem fundamentadas, especialmente em momentos de ruptura familiar.
-
-É sócia-fundadora de escritório com atuação concentrada em Direito de Família, Direito Civil e Direito Imobiliário, estruturado para oferecer atendimento personalizado, estratégia processual clara e comunicação acessível, contando ainda com o suporte de uma equipe de estagiários cuidadosamente selecionada e integrada à dinâmica do escritório.</p>
+                            <p class="bio">Possui sólida experiência na condução de demandas sensíveis e patrimonialmente relevantes, assessorando clientes que buscam segurança jurídica, discrição, agilidade e decisões bem fundamentadas, especialmente em momentos de ruptura familiar.</p>
+                            
+                            <p class="bio">É sócia-fundadora de escritório com atuação concentrada em Direito de Família, Direito Civil e Direito Imobiliário, estruturado para oferecer atendimento personalizado, estratégia processual clara e comunicação acessível, contando ainda com o suporte de uma equipe de estagiários cuidadosamente selecionada e integrada à dinâmica do escritório.</p>
                         </div>
 
                         <button class="btn-read-more" onclick="toggleBio('bio-eduarda', this)">Ler mais</button>
@@ -767,7 +763,7 @@ Advogada especialista em Direito de Família e Sucessões, com atuação estrat�
             
             <div class="partner-block reveal" style="transition-delay: 0.2s;">
                 <div class="partner-img-wrapper">
-                    <img src="Dra._Andressa_Giacometti.png" class="partner-img" alt="Dra. Andressa Giacometti - Advogada e Mediadora em Curitiba">
+                    <img src="Dra._Andressa_Giacometti.png" class="partner-img" alt="Dra. Andressa Giacometti">
                 </div>
                 <div class="partner-info">
                     <h3>Dra. Andressa Giacometti</h3>
@@ -775,12 +771,18 @@ Advogada especialista em Direito de Família e Sucessões, com atuação estrat�
                     <span class="oab-number">OAB/PR 64.731</span>
                     
                     <div class="bio-content" id="bio-andressa">
-                        <p class="bio">Advogada com mais de 15 anos de atuação em Curitiba, especialista em Direito de Família e Sucessões. Possui prática consolidada em divórcios complexos, guarda e reorganização patrimonial familiar.</p>
+                        <p class="bio">Advogada com mais de 15 anos de atuação, especialista em Direito de Família e Sucessões, com prática consolidada e atuação estratégica em divórcios complexos, guarda, pensão alimentícia, partilha de bens e reorganização patrimonial familiar.</p>
 
                         <div class="bio-more">
-                             <p class="bio">Conduz sua atuação com base na técnica jurídica e empatia. Pós-graduada em Direito de Família e Direito Imobiliário, com formação em Mediação de Conflitos. Atuou por 10 anos na assessoria jurídica imobiliária da família Giacometti em Curitiba.</p>
+                             <p class="bio">Conduz sua atuação com base na técnica jurídica, e sabe na pele a experiência prática de ter enfrentado um divórcio conflituoso no início da sua carreira envolvendo a sua filha, a pequena Maria Clara.</p>
+
+                             <p class="bio">É pós-graduada em Direito de Família e em Direito Imobiliário, além de possuir formação em Mediação de Conflitos Familiares, o que lhe confere uma atuação eficaz na resolução dos conflitos.</p>
+
+                             <p class="bio">Atuou por 10 anos como advogada da imobiliária da família, Giacometti Imóveis, empresa com 38 anos de mercado em Curitiba, onde desenvolveu sólida experiência na gestão, organização e proteção do patrimônio imobiliário.</p>
+
+                             <p class="bio">Possui sólida experiência na condução de demandas sensíveis e patrimonialmente relevantes, assessorando clientes que buscam segurança jurídica, discrição e agilidade, sempre aliando técnica apurada a uma abordagem humana.</p>
                              
-                             <p class="bio">É sócia-fundadora do escritório, estruturado para oferecer atendimento personalizado com uma equipe integrada.</p>
+                             <p class="bio">É sócia-fundadora do escritório, estruturado para oferecer atendimento personalizado com uma equipe integrada à dinâmica do escritório.</p>
                         </div>
 
                         <button class="btn-read-more" onclick="toggleBio('bio-andressa', this)">Ler mais</button>
@@ -793,12 +795,12 @@ Advogada especialista em Direito de Família e Sucessões, com atuação estrat�
     <section class="media-highlight" id="midia">
         <div class="media-grid reveal">
             <div class="media-img-container">
-                <img src="reportagem.png" alt="Escritório Giacometti Maurer em destaque na Folha de Curitiba">
+                <img src="reportagem.png" alt="Destaque na Folha de Curitiba">
             </div>
             <div class="media-content">
-                <h3>Destaque na Mídia Paranaense</h3>
-                <h2>Reconhecimento em Curitiba</h2>
-                <p>O escritório Giacometti & Maurer Advocacia foi destaque no portal <strong>Folha de Curitiba</strong> pelo seu crescimento notável e abordagem diferenciada no Direito de Família. A matéria ressalta nosso compromisso em oferecer soluções justas e equilibradas para as famílias da capital.</p>
+                <h3>Destaque na Mídia</h3>
+                <h2>Reconhecimento pelo Atendimento Humanizado</h2>
+                <p>O escritório Giacometti & Maurer Advocacia foi destaque no portal <strong>Folha de Curitiba</strong> pelo seu crescimento notável e abordagem diferenciada no Direito de Família. A matéria ressalta nosso compromisso em oferecer soluções justas e equilibradas.</p>
                 <a href="https://www.instagram.com/p/DGmCLPhpH_G/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==" target="_blank" class="btn-green">Ler Matéria Completa <i class="fas fa-external-link-alt" style="margin-left: 10px;"></i></a>
             </div>
         </div>
@@ -806,35 +808,35 @@ Advogada especialista em Direito de Família e Sucessões, com atuação estrat�
 
     <section class="areas-section" id="atuacao">
         <div class="section-header reveal">
-            <span class="section-tag">Nossas Especialidades</span>
-            <h2 class="section-title">Áreas de Atuação Jurídica</h2>
+            <span class="section-tag">Especialidades</span>
+            <h2 class="section-title">Como podemos ajudar</h2>
         </div>
         <div class="areas-grid">
             <div class="area-card reveal">
                 <div class="area-image-container">
-                    <img src="https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?auto=format&fit=crop&w=600&q=80" alt="Advogado de Direito de Família">
+                    <img src="https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?auto=format&fit=crop&w=600&q=80" alt="Direito de Família">
                 </div>
                 <div class="area-content">
                     <h3>Direito das Famílias</h3>
-                    <ul><li>Guarda e convivência</li><li>Pensão alimentícia</li><li>Divórcio Extrajudicial e Judicial</li><li>Alienação parental</li></ul>
+                    <ul><li>Guarda e convivência</li><li>Pensão alimentícia</li><li>Divórcios</li><li>Alienação parental</li></ul>
                 </div>
             </div>
             <div class="area-card reveal" style="transition-delay: 0.2s;">
                 <div class="area-image-container">
-                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80" alt="Advocacia Imobiliária Curitiba">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80" alt="Direito Imobiliário">
                 </div>
                 <div class="area-content">
                     <h3>Direito Imobiliário</h3>
-                    <ul><li>Compra e venda de imóveis</li><li>Regularização fundiária</li><li>Ações de Despejo</li><li>Assessoria Condominial</li></ul>
+                    <ul><li>Compra e venda</li><li>Regularização</li><li>Despejos</li><li>Condomínios</li></ul>
                 </div>
             </div>
             <div class="area-card reveal" style="transition-delay: 0.4s;">
                 <div class="area-image-container">
-                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80" alt="Advogado de Inventário e Sucessões">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80" alt="Sucessões">
                 </div>
                 <div class="area-content">
-                    <h3>Sucessões e Inventários</h3>
-                    <ul><li>Inventário e partilha de bens</li><li>Testamentos</li><li>Planejamento sucessório</li><li>Doações em vida</li></ul>
+                    <h3>Sucessões</h3>
+                    <ul><li>Inventário e partilha</li><li>Testamentos</li><li>Planejamento sucessório</li><li>Doações</li></ul>
                 </div>
             </div>
         </div>
@@ -843,14 +845,14 @@ Advogada especialista em Direito de Família e Sucessões, com atuação estrat�
     <div class="parallax-divider">
         <div class="quote-box reveal">
             <p>"O Direito não é uma construção fria de normas; ele nasce da vida social e se transforma com ela. Onde o Direito se afasta da realidade humana, deixa de cumprir sua função."</p>
-            <span style="display:block; margin-top:20px; font-size: 0.9rem; color: var(--accent);">— Miguel Reale</span>
+            <span style="display:block; margin-top:20px; font-size: 0.9rem; color: var(--accent);">— Miguel Real</span>
         </div>
     </div>
 
     <section class="contact-map-section" id="contato">
         <div class="section-header">
-            <span class="section-tag">Localização Privilegiada</span>
-            <h2 class="section-title">Escritório no Centro de Curitiba</h2>
+            <span class="section-tag">Localização</span>
+            <h2 class="section-title">Visite Nosso Escritório</h2>
         </div>
         
         <div class="contact-container reveal">
@@ -861,7 +863,7 @@ Advogada especialista em Direito de Família e Sucessões, com atuação estrat�
                     <i class="fas fa-map-marker-alt"></i>
                     <div>
                         <strong>Endereço</strong>
-                        <p>Rua Ébano Pereira, 11 - Centro<br>Curitiba - PR, 80410-240</p>
+                        <p>Rua Ébano Pereira, 11 - Centro, Curitiba - PR, 80410-240<br>Curitiba, Paraná</p>
                     </div>
                 </div>
 
@@ -896,20 +898,20 @@ Advogada especialista em Direito de Família e Sucessões, com atuação estrat�
             </div>
 
             <div class="map-container">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.1955788801297!2d-49.27643282461054!3d-25.431724077560737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce40ddbb9cafb%3A0xdbb55e9a861a3898!2sR.%20%C3%89bano%20Pereira%2C%2011%20-%20Centro%2C%20Curitiba%20-%20PR%2C%2080410-240!5e0!3m2!1spt-BR!2sbr!4v1769013907044!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Localização Giacometti Maurer Advocacia Curitiba"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.1955788801297!2d-49.27643282461054!3d-25.431724077560737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce40ddbb9cafb%3A0xdbb55e9a861a3898!2sR.%20%C3%89bano%20Pereira%2C%2011%20-%20Centro%2C%20Curitiba%20-%20PR%2C%2080410-240!5e0!3m2!1spt-BR!2sbr!4v1769013907044!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="logo" style="display: inline-block; margin-bottom: 15px; font-size: 1.2rem; color: #fff;">Giacometti Maurer | Advocacia</div>
+        <div class="logo" style="display: inline-block; margin-bottom: 15px; font-size: 1.2rem; color: #fff;">Giacometti Maurer</div>
         
         <div class="social-icons">
-            <a href="https://www.instagram.com/giacomettimaurer/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" onclick="toggleModal()" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/giacomettimaurer/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" onclick="toggleModal()"><i class="fab fa-whatsapp"></i></a>
         </div>
 
-        <p>© 2026 Giacometti Maurer Advocacia. Todos os direitos reservados. | <a href="https://lynk.com.br" target="_blank" style="color: #666; text-decoration: none;">Desenvolvido por <strong>Lynk</strong></a>.</p>
+        <p>© 2026 Giacometti Maurer Advocacia. Desenvolvido por Lynk.</p>
     </footer>
 
     <script>
